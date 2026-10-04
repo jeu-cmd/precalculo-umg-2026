@@ -1,1 +1,1 @@
-__FILE__/tmp/precalculo/pdf/README.txt
+Colocar aquí los PDF de apoyo. Ejemplo: PRE-09-funciones-cuadraticas.pdf
