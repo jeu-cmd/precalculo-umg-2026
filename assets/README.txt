@@ -1,1 +1,1 @@
-__FILE__/tmp/precalculo/assets/README.txt
+Colocar aquí imágenes, logotipo y recursos visuales del proyecto.
