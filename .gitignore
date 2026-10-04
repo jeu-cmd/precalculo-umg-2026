@@ -1,1 +1,11 @@
-__FILE__/tmp/precalculo/.gitignore
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+
+# Archivos temporales
+*.tmp
+*.bak
