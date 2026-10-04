@@ -1,1 +1,1 @@
-__FILE__/tmp/precalculo/videos/README.txt
+Los videos finales se recomienda alojarlos en YouTube como No listado/Público y guardar aquí únicamente metadatos si son necesarios.
