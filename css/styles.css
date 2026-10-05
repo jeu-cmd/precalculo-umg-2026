@@ -8,3 +8,33 @@
 @media(max-width:1100px){.sidebar{width:220px;padding:22px 16px}.main{margin-left:220px;width:calc(100% - 220px)}.wrap{padding:0 32px}.topbar{padding:0 32px}.topic-row{grid-template-columns:85px 1fr 60px}.topic-type{display:none}.hero{gap:45px}.lesson-layout{gap:40px}.viewer-layout{grid-template-columns:minmax(0,1fr) 270px;gap:35px}}
 @media(max-width:800px){.sidebar{transform:translateX(-100%);transition:transform .2s;width:250px;box-shadow:none}.sidebar.open{transform:translateX(0);box-shadow:8px 0 20px rgba(30,35,42,.08)}.main{margin-left:0;width:100%}.mobile-menu{display:block;border:0;background:none;font-size:22px}.topbar{padding:0 20px}.search{display:none}.wrap{padding:0 24px}.hero{grid-template-columns:1fr;padding:55px 0}.hero-index{border-left:0;border-top:1px solid var(--line);padding:30px 0 0}.path{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}.viewer-layout,.lesson-layout,.lab{grid-template-columns:1fr}.side,.lab-panel{border-left:0;border-top:1px solid var(--line);padding:30px 0}.topic-row{grid-template-columns:70px 1fr 35px}.vrow{grid-template-columns:75px 1fr}.vrow a{grid-column:2;text-align:left}.member{grid-template-columns:60px 1fr}.member div:last-child{grid-column:2}.resources{grid-template-columns:1fr}.resource,.resource:nth-child(even){padding:25px 0;border-right:0}.footer{display:block}}
 @media(max-width:520px){.hero h1{font-size:46px}.section-head h2{font-size:34px}.path{grid-template-columns:1fr}.step{border-right:0}.topic-row h3{font-size:18px}.viewer-head h1{font-size:38px}.manifesto{font-size:22px}.wrap{padding:0 18px}}
+
+/* Corrección definitiva de vistas generales */
+.view:not(#view-topic){
+  position:relative;
+  width:100%;
+  margin:0;
+  padding:0;
+  overflow:visible;
+}
+.view:not(#view-topic)>.wrap{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0 64px;
+}
+.view:not(#view-topic)>.wrap>.section,
+.view:not(#view-topic)>.wrap>.catalog{
+  width:100%;
+  margin:0;
+  padding:32px 0 55px;
+}
+@media(max-width:1100px){
+  .view:not(#view-topic)>.wrap{padding-left:32px;padding-right:32px}
+}
+@media(max-width:800px){
+  .view:not(#view-topic)>.wrap{padding-left:24px;padding-right:24px}
+}
+@media(max-width:520px){
+  .view:not(#view-topic)>.wrap{padding-left:18px;padding-right:18px}
+}
