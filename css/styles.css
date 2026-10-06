@@ -39,4 +39,5 @@
   .view:not(#view-topic)>.wrap{padding-left:18px;padding-right:18px}
 }
 /* Corrección del contenedor de desplazamiento */
-.main{overflow-x:clip}
+/* El desplazamiento de la página debe pertenecer al documento, no a .main. */
+.main{overflow:visible}
