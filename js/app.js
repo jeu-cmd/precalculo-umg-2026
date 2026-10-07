@@ -9,4 +9,3 @@ document.addEventListener('click',e=>{const view=e.target.closest('[data-view]')
 try{build()}catch(error){console.error('Error al construir el contenido:',error)}
 
 $('#menu').onclick=()=>$('#sidebar').classList.toggle('open');$('#search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();$('#topicGrid .topic-row').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'grid':'none')});
-$('#menu').onclick=()=>$('#sidebar').classList.toggle('open');$('#search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();$$('#topicGrid .topic-row').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'grid':'none')});
