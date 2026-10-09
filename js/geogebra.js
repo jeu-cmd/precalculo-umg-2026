@@ -1,6 +1,5 @@
 'use strict';
 (function(){
-  const loadedTopics = new Set();
   let generalLoaded = false;
 
   function setStatus(id, message) {
@@ -65,8 +64,8 @@
     target.style.display = 'block';
     target.classList.add('geogebra-topic');
     const key = String(topicNumber);
-    if (loadedTopics.has(key)) return;
-    loadedTopics.add(key);
+    if (target.dataset.topic === key && target.querySelector('iframe')) return;
+    target.dataset.topic = key;
     const commands = Number(topicNumber) === 9
       ? ['f(x)=x^2-4x+3', 'V=(2,-1)', 'A=(1,0)', 'B=(3,0)', 'C=(0,3)']
       : ['p(x)=x^3-6x^2+11x-6', 'A=(1,0)', 'B=(2,0)', 'C=(3,0)'];
