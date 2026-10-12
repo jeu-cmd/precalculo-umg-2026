@@ -22,3 +22,20 @@
 #geogebra-topic{min-height:480px;margin:20px 0}
 @media(max-width:1000px){.geo-lab-layout{grid-template-columns:1fr}.geogebra-general{min-height:520px}}
 @media(max-width:600px){.geogebra-frame{min-height:400px}.geogebra-general{min-height:480px}#geogebra-topic{min-height:420px}}
+
+/* Sección de conferencia */
+.conference-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);gap:42px;align-items:start}
+.conference-image-panel{min-height:340px;border:1px solid var(--line);background:var(--soft);display:grid;place-items:center;overflow:hidden}
+.conference-image-placeholder{text-align:center;padding:35px;color:var(--muted)}
+.conference-image-placeholder p{max-width:300px;margin:12px auto}
+#conferenceImagePreview{display:block;width:100%;height:100%;max-height:620px;object-fit:contain}
+.conference-content label:not(.upload-btn){display:block;margin:18px 0 6px;font-size:13px;font-weight:600}
+.conference-content input:not([type=file]),.conference-content textarea{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);padding:10px 0;font:inherit;border-radius:0}
+.conference-content input:focus,.conference-content textarea:focus{outline:none;border-bottom-color:var(--accent)}
+.conference-content textarea{resize:vertical}
+.upload-btn{display:inline-block;margin-bottom:6px}
+.field-note{font-size:12px;color:var(--muted);margin:8px 0 18px}
+.conference-summary{margin-top:35px;padding-top:22px;border-top:1px solid var(--ink)}
+.conference-summary h3{font:600 27px var(--serif);margin:0 0 8px}
+.conference-summary p{white-space:pre-wrap}
+@media(max-width:1000px){.conference-layout{grid-template-columns:1fr}.conference-image-panel{min-height:260px}}
