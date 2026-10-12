@@ -39,3 +39,5 @@
 .conference-summary h3{font:600 27px var(--serif);margin:0 0 8px}
 .conference-summary p{white-space:pre-wrap}
 @media(max-width:1000px){.conference-layout{grid-template-columns:1fr}.conference-image-panel{min-height:260px}}
+
+#conferenceImagePreview[hidden]{display:none}
