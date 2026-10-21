@@ -59,3 +59,11 @@
 .home-closing{padding-bottom:75px}
 @media(max-width:1000px){.home-columns{grid-template-columns:1fr;gap:28px}.home-members>div{grid-template-columns:45px minmax(0,1fr) 95px;gap:12px}}
 @media(max-width:600px){.home-members>div{grid-template-columns:32px 1fr}.home-members small{grid-column:2;text-align:left}.hero h1{overflow-wrap:anywhere}}
+
+
+/* Contenedor de uno o varios videotutoriales por tema */
+.video-list{display:grid;gap:28px}
+.topic-video h3{font:600 22px var(--serif);margin:0 0 12px}
+.topic-video .video-box iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.video-list .video-box{width:100%;overflow:hidden}
+.home-members{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
