@@ -1,6 +1,12 @@
 
 {
-  "1": [],
+  "1": [
+    {
+      "title": "Tema 1: ",
+      "url": "https://youtu.be/30a4wA5S4ms?si=H6Zh3Cul2Njs6v2e",
+      "description": "Explicación paso a paso por William Estuardo Marroquin Ortiz"
+    }
+  ],
   "2": [
     {
       "title": "Tema 2: Expresiones Racionales",
@@ -15,7 +21,13 @@
       "description": "Explicación paso a paso por David Cristobal Salguero Lopez"
     }
   ],
-  "4": [],
+  "4": [
+    {
+      "title": "Tema 4: Modelado Con Ecuaciones",
+      "url": "https://youtu.be/ZVK2Ha1avnA",
+      "description": "Explicación paso a paso por William Estuardo Marroquin Ortiz"
+    }
+  ],
   "5": [],
   "6": [
     {
