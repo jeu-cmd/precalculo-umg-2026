@@ -53,7 +53,33 @@ const ok=checks[n]?checks[n]():false;
 $('#practiceResult').textContent=ok?'¡Correcto! Compara tu procedimiento con el ejemplo paso a paso.':'Todavía no coincide con la respuesta esperada. Revisa los datos y el procedimiento e inténtalo de nuevo.';
 }});
 
-try{build()}catch(error){console.error('Error al construir el contenido:',error)}
+async function loadVideos(){
+  try{
+    const response=await fetch('videos.json');
+    if(!response.ok)throw new Error('No se pudo leer videos.json');
+    const videoData=await response.json();
+    topics.forEach(topic=>{
+      const entries=Array.isArray(videoData[String(topic.n)])?videoData[String(topic.n)]:[];
+      topic.videos=entries.map(video=>{
+        const url=String(video.url||'').trim();
+        let id='';
+        try{
+          const parsed=new URL(url);
+          if(parsed.hostname==='youtu.be')id=parsed.pathname.slice(1);
+          else if(['youtube.com','www.youtube.com','m.youtube.com','youtube-nocookie.com','www.youtube-nocookie.com'].includes(parsed.hostname)){
+            if(parsed.pathname==='/watch')id=parsed.searchParams.get('v')||'';
+            else if(parsed.pathname.startsWith('/embed/'))id=parsed.pathname.split('/')[2]||'';
+            else if(parsed.pathname.startsWith('/shorts/'))id=parsed.pathname.split('/')[2]||'';
+          }
+        }catch(error){console.warn('Enlace de YouTube no válido:',url)}
+        return id&&/^[a-zA-Z0-9_-]{11}$/.test(id)?{title:video.title||'Videotutorial',description:video.description||'',embedUrl:'https://www.youtube-nocookie.com/embed/'+id}:null;
+      }).filter(Boolean);
+    });
+    videos.splice(0,videos.length,...topics.flatMap(topic=>topic.videos.map(video=>({code:'PRE-'+String(topic.n).padStart(2,'0'),title:video.title,topic:topic.title,duration:topic.duration}))));
+  }catch(error){console.warn('No se pudieron cargar videos.json; se mostrarán los espacios pendientes.',error)}
+  try{build()}catch(error){console.error('Error al construir el contenido:',error)}
+}
+loadVideos();
 
 $('#menu').onclick=()=>$('#sidebar').classList.toggle('open');
 $('#search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();$('#topicGrid .topic-row').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'grid':'none')});
