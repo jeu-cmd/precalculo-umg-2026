@@ -1,17 +1,40 @@
 {
   "1": [],
-  "2": [],
-  "3": [],
+  "2": [ {
+      "title": "Tema 2: Expresiones Racionales",
+      "url": "https://youtu.be/BmE4m0WvHVs",
+      "description": "Explicación paso a paso por David Cristobal Salguero Lopez"
+    }],
+  "3": [{
+      "title": "Tema 3: Ecuaciones",
+      "url": "https://youtu.be/lxXE9sJpF2A",
+      "description": "Explicación paso a paso por David Cristobal Salguero Lopez"
+    }],
   "4": [],
   "5": [],
-  "6": [],
+  "6": [{
+      "title": "Tema 6: Rectas",
+      "url": "https://youtu.be/lxXE9sJpF2A",
+      "description": "Explicación paso a paso por Etni Ardany Rodriguez Archila"
+    }],
   "7": [],
   "8": [],
   "9": [
     {
-      "title": "Ecuacion Cuadratica",
-      "url": "https://youtu.be/fqr0Q2fM7hE",
-      "description": "Explicación paso a paso."
+      "title": "Tema 9: Ecuaciones Cuadraticas",
+      "url": "https://youtu.be/FfbDwjlzJuo",
+      "description": "Explicación paso a paso por Ronaldo Jeu Yanes Y Yanes."
+    }
+  {
+      "title": "Tema 9. Ecuaciones Cuadraticas Parte 2",
+      "url": "https://youtu.be/Ad2bnrHZaH0",
+      "description": "Explicación paso a paso por Ronaldo Jeu Yanes Y Yanes."
     }],
-  "10": []
+  "10": [
+    {
+      "title": "Tema 10: Ecuaciones Polinomiales",
+      "url": "https://youtu.be/pJ604fr6PWw",
+      "description": "Explicación paso a paso por Ronaldo Jeu Yanes Y Yanes."
+    }
+  ]
 }
