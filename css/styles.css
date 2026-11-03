@@ -67,3 +67,29 @@
 .topic-video .video-box iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
 .video-list .video-box{width:100%;overflow:hidden}
 .home-members{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+
+/* Sección Convención */
+.convention-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:22px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:28px 0 38px}
+.convention-meta div{display:grid;gap:5px}
+.convention-meta span{font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:700}
+.convention-meta strong{font-weight:600}
+.convention-gallery{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:start;margin:0 0 65px}
+.convention-gallery figure{margin:0}
+.convention-gallery img{display:block;width:100%;height:100%;max-height:520px;object-fit:cover;background:var(--soft)}
+.convention-gallery figure:first-child img{aspect-ratio:4/3}
+.convention-gallery figure:nth-child(2) img{aspect-ratio:3/4}
+.convention-gallery figcaption{font-size:13px;color:var(--muted);padding-top:9px}
+.convention-topics{max-width:1000px}
+.convention-topics>h3{font:600 30px var(--serif);margin:0 0 22px}
+.convention-topics article{display:grid;grid-template-columns:60px minmax(0,1fr);gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.convention-topics article>span{color:var(--accent);font-weight:700}
+.convention-topics h4{font:600 21px var(--serif);margin:0 0 7px}
+.convention-topics article p{margin:0;color:#50555a;max-width:850px}
+@media(max-width:700px){.convention-meta{grid-template-columns:1fr;gap:14px}.convention-gallery{grid-template-columns:1fr;gap:24px}.convention-gallery img{max-height:440px}.convention-topics article{grid-template-columns:35px 1fr;gap:12px}}
+
+.convention-attendees{margin:0 0 58px;padding:25px 28px;background:var(--soft);border-left:3px solid var(--accent)}
+.convention-attendees h3{font:600 26px var(--serif);margin:0 0 8px}
+.convention-attendees>p:not(.eyebrow){margin:0 0 14px;color:#50555a}
+.convention-attendees ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 28px;margin:0;padding-left:20px}
+@media(max-width:600px){.convention-attendees{padding:20px}.convention-attendees ul{grid-template-columns:1fr}}

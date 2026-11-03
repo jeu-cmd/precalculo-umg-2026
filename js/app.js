@@ -1,7 +1,7 @@
 'use strict';
 
 const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);
-function showView(name){$$('.view').forEach(v=>v.classList.remove('active'));$('#view-'+name)?.classList.add('active');$$('.nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));$('#crumb').textContent=name==='inicio'?'Inicio':({temas:'Explorar temas',videos:'Videotutoriales',laboratorio:'Laboratorio gráfico',retos:'Ejercicios y retos',materiales:'Materiales',equipo:'Equipo',conferencia:'Conferencia'}[name]||'Tema');$('#sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}
+function showView(name){$$('.view').forEach(v=>v.classList.remove('active'));$('#view-'+name)?.classList.add('active');$$('.nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));$('#crumb').textContent=name==='inicio'?'Inicio':({temas:'Explorar temas',videos:'Videotutoriales',laboratorio:'Laboratorio gráfico',retos:'Ejercicios y retos',materiales:'Materiales',equipo:'Equipo',conferencia:'Convención'}[name]||'Tema');$('#sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}
 function openTopic(n){const t=topics.find(x=>x.n===Number(n));if(!t)return;window.currentTopicNumber=t.n;$('#topicCode').textContent=`PRE-${String(t.n).padStart(2,'0')} · ${t.type}`;$('#topicTitle').textContent=t.title;$('#topicIntro').textContent=t.intro;$('#topicFormula').textContent=t.formula;$('#topicProps').textContent=t.props;$('#topicFacts').innerHTML=`<div><span>01</span><span>${t.type}</span></div><div><span>02</span><span>Ejercicio guiado</span></div><div><span>03</span><span>Videotutorial</span></div>`;$('#exampleTitle').textContent=t.example;$('#exampleIntro').textContent='Procedimiento organizado en pasos para que el resultado pueda comprobarse al finalizar.';$('#steps').innerHTML=t.steps.map(s=>`<li>${s}</li>`).join('');$('#checkText').textContent='Use el resultado del ejemplo para verificar la resolución.';$('#checkResult').textContent='';const graphDescriptions={
 1:'Explora cómo cambian las expresiones al variar el exponente y compara potencias con radicales. Para una gráfica relacionada, representa y=√x y observa su dominio.',
 2:'Las expresiones racionales pueden presentar restricciones donde el denominador vale cero. Grafica una función racional e identifica los valores excluidos.',
@@ -84,25 +84,3 @@ loadVideos();
 $('#menu').onclick=()=>$('#sidebar').classList.toggle('open');
 $('#search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();$('#topicGrid .topic-row').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'grid':'none')});
 
-const conferenceFields={title:$('#conferenceTitle'),date:$('#conferenceDate'),place:$('#conferencePlace'),schedule:$('#conferenceSchedule'),description:$('#conferenceDescription')};
-function updateConferencePreview(){
-  $('#conferencePreviewTitle').textContent=conferenceFields.title.value.trim()||'Conferencia académica';
-  const details=[conferenceFields.date.value.trim(),conferenceFields.place.value.trim(),conferenceFields.schedule.value.trim()].filter(Boolean);
-  $('#conferencePreviewMeta').textContent=details.length?details.join(' · '):'La fecha, el lugar y el horario se mostrarán aquí.';
-  $('#conferencePreviewDescription').textContent=conferenceFields.description.value.trim()||'La descripción de la conferencia aparecerá aquí.';
-  $('#conferenceStatus').textContent='Vista previa actualizada.';
-}
-$('#applyConferenceText').addEventListener('click',updateConferencePreview);
-$('#conferenceImage').addEventListener('change',e=>{
-  const file=e.target.files&&e.target.files[0];
-  if(!file)return;
-  if(!file.type.startsWith('image/')){ $('#conferenceStatus').textContent='Selecciona un archivo de imagen.';return; }
-  const reader=new FileReader();
-  reader.onload=event=>{
-    $('#conferenceImagePreview').src=event.target.result;
-    $('#conferenceImagePreview').hidden=false;
-    $('#conferenceImagePlaceholder').hidden=true;
-    $('#conferenceStatus').textContent='Imagen cargada para vista previa en este navegador.';
-  };
-  reader.readAsDataURL(file);
-});
